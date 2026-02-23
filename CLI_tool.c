@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-FILE *fptr, *fptr2;
+FILE *fptr; //removed the 2nd pointer since it was pointless(ha)
 char caesar_encrypt_char(char p, int k) {
     if (isupper(p)) {
         return ((p - 'A' + k) % 26) + 'A';
@@ -30,8 +30,11 @@ int main() {
 
     fptr = fopen("plaintext.txt", "r");
     fgets(unencrypted, sizeof(unencrypted), fptr);
-    fptr2 = fopen("key.txt","r"); //I originally opened this to change the value and it stopped working, please don't touch the file content
-    fscanf(fptr2, "%d", &a);
+    fclose(fptr);//adding these for the sake of tidying up
+    
+    fptr = fopen("key.txt","r"); //I originally opened this to change the value and it stopped working, please don't touch the file content
+    fscanf(fptr, "%d", &a);
+    fclose(fptr);
 
     for (int i = 0; i < strlen(unencrypted); i++) {
         encrypted[i] = caesar_encrypt_char(unencrypted[i], a);
