@@ -61,7 +61,7 @@ int main() {
     printf("Encrypted string: %s", encrypted);
     printf("Decrypted string: %s", decrypted);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 /*Като цяло май-щеше да е по-добре да си спестя 1ния час нерви за глупости и просто трябваше да ползвам
 другаря GPT но поне не научих нищо*/
