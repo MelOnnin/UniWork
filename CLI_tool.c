@@ -1,7 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-FILE *fptr; //removed the 2nd pointer since it was pointless(ha)
 char caesar_encrypt_char(char p, int k) {
     if (isupper(p)) {
         return ((p - 'A' + k) % 26) + 'A';
@@ -23,6 +22,7 @@ char caesar_decrypt_char(char c, int k) {
 }
 
 int main() {
+    FILE *fptr; //removed the 2nd pointer since it was pointless(ha)
     int a;
     char unencrypted[500];
     char encrypted[500];
@@ -58,5 +58,5 @@ int main() {
     //for some reason it spits out a few random characters in the decrypted file, idk why
     //also I realized I didn't need to declare a "fptr2" and I could have just used the first one for the integer
 
-    return 0;
+    return EXIT_SUCCESS;
 }
