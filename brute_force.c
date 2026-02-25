@@ -1,7 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-FILE* fptr;
 
 char caesar_decrypt_char(char c, int k) {
     if (isupper(c)) {
@@ -14,6 +13,7 @@ char caesar_decrypt_char(char c, int k) {
 }
 int main()
 {
+    FILE* fptr;
     char encrypted[500];
     char decrypted[500];
     fptr=fopen("encrypted.txt","r");
