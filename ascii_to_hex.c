@@ -6,7 +6,6 @@ printf("Symbol | Decimal | Hex\n");
 printf("-------|---------|-----\n");
 
 for (int i = 0; i < strlen(text); i++) {
-// TODO: Използвайте printf с формати %c, %d и %02X
     printf("%07c|%9d|%4x \n", text[i],text[i],text[i]);
 }
 }
