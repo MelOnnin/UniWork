@@ -26,8 +26,5 @@ int main()
         }
         printf("Decrypted string: %s \n", decrypted);
     }
-      /*this took less time than I expected it was actually really easy to just copy paste what I wrote for the previous
-      assignment and repeat it in the loop 25 times since I didn't know the key*/
-      //maybe I can have it be filtered through a list of words and that's how it gives me the one that's actually readable
     return EXIT_SUCCESS;
 }
