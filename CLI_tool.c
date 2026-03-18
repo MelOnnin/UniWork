@@ -22,7 +22,7 @@ char caesar_decrypt_char(char c, int k) {
 }
 
 int main() {
-    FILE *fptr; //removed the 2nd pointer since it was pointless(ha)
+    FILE *fptr; 
     int a;
     char unencrypted[500];
     char encrypted[500];
@@ -30,9 +30,9 @@ int main() {
 
     fptr = fopen("plaintext.txt", "r");
     fgets(unencrypted, sizeof(unencrypted), fptr);
-    fclose(fptr);//adding these for the sake of tidying up
+    fclose(fptr);
     
-    fptr = fopen("key.txt","r"); //I originally opened this to change the value and it stopped working, please don't touch the file content
+    fptr = fopen("key.txt","r"); 
     fscanf(fptr, "%d", &a);
     fclose(fptr);
 
@@ -55,8 +55,6 @@ int main() {
     fptr = fopen("decrypted.txt","w");
     fprintf(fptr, decrypted);
     fclose(fptr);
-    //for some reason it spits out a few random characters in the decrypted file, idk why
-    //also I realized I didn't need to declare a "fptr2" and I could have just used the first one for the integer
-
+    
     return EXIT_SUCCESS;
 }
