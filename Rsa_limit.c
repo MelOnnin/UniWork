@@ -68,7 +68,7 @@ int main() {
     printf("[2] RSA-%d with OAEP padding can encrypt at most %d bytes.\n\n",
            KEY_BITS, MAX_PAYLOAD);
 
-    /* --- Test 1: small message (fits) --- */
+    
     unsigned char small_msg[100];
     memset(small_msg, 'A', sizeof(small_msg));
     printf("[3] Encrypting small message (%zu bytes)...\n", sizeof(small_msg));
@@ -82,7 +82,6 @@ int main() {
         printf("    [FAIL] Unexpected failure on small message.\n\n");
     }
 
-    /* --- Test 2: large message (1000 bytes, does not fit) --- */
     unsigned char large_msg[1000];
     memset(large_msg, 'B', sizeof(large_msg));
     printf("[4] Encrypting large message (%zu bytes)...\n", sizeof(large_msg));
